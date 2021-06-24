@@ -1,4 +1,4 @@
-package example; package fx.shape; import language.implicitConversions
+package example.fx; package shape; import language.implicitConversions
 
 //SBT: runMain example.fx.shape.PathTry
 

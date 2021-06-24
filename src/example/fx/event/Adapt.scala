@@ -1,4 +1,4 @@
-package example; package fx.event; import language.implicitConversions
+package example.fx; package event; import language.implicitConversions
 
 /*
    Purpose: Show how to add a standard scalqa style onChange event to javafx.collections.ObservableList

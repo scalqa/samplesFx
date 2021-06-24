@@ -1,4 +1,4 @@
-package example; package fx.chart; import language.implicitConversions
+package example.fx; package chart; import language.implicitConversions
 
 //SBT: runMain example.fx.chart.Lines
 

@@ -1,4 +1,4 @@
-package example; package fx.table; import language.implicitConversions
+package example.fx; package table; import language.implicitConversions
 
 //SBT: runMain example.fx.table.Fri13ThExplorer
 
