@@ -20,7 +20,7 @@ object SortingCustomCells extends Application(800, 400, "TryTableSort"):
       contextMenu_:((e, c) => e.actions += Action("AAAA"))
       style = "-fx-border-color: blue; -fx-border-width: 1px"
       new CustomCell[Float](_ % 2 == 0) {
-        value_:(i => (i * 10).Float)
+        value_:(i => (i * 10).toFloat)
         alignment = LEFT
         contextMenu_:((e, c) => e.actions += Action("BBBB"))
       }
