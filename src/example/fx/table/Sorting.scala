@@ -6,8 +6,8 @@ import Fx.*
 
 object Sorting extends Application(800, 401, "TryTableSort"):
 
-  val intStream : Int.~       = 1 <> 1000
-  val ITEMS     : Idx.OM[Int] = Idx.OM()
+  val intStream: Int.~       = 1 <> 1000
+  val ITEMS    : Idx.OM[Int] = Idx.OM()
 
   ITEMS ++= intStream.read_~(6).reverseEvery(3)
   ITEMS.onChange(_.~.print) // print out events
