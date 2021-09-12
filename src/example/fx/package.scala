@@ -4,7 +4,7 @@ val Lang = scalqa.Lang
 val Val  = scalqa.Val
 val Gen  = scalqa.Gen
 val J    = scalqa.J
-lazy val Fx = scalqa.Fx
+val Fx   = scalqa.Fx
 
 export Lang.*
 export Gen.*

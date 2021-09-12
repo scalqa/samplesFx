@@ -4,7 +4,6 @@ package example.fx; package shape; import language.implicitConversions
 
 object PathTry extends Fx.Application(600, 400, "Try Path"):
 
-  import Fx.Label.Like
   import Fx.Shape.*
   import Path.*
 

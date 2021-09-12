@@ -10,14 +10,14 @@ import javafx.collections.{ ObservableList => JAVA_FX_LIST }
 
 object Adapt:
 
-  extension[A](x: JAVA_FX_LIST[A]) {
-    def onChange(f: => Unit): Event.Control = new Event.Control.X.Basic(() => f) with javafx.beans.InvalidationListener {
-      def invalidated(o: javafx.beans.Observable) = target_?.forval(_())
-      onCancel(() => x.removeListener(this))
-      onCancel(() => "Listener Removed".tp)
-      x.addListener(this)
-    }
-  }
+  extension[A](x: JAVA_FX_LIST[A])
+    def onChange(f: => Unit): Event.Control =
+      new Event.Control.X.Basic(() => f) with javafx.beans.InvalidationListener {
+        def invalidated(o: javafx.beans.Observable) = target_?.forval(_())
+        onCancel(() => x.removeListener(this))
+        onCancel(() => "Listener Removed".tp)
+        x.addListener(this)
+      }
 
   def main(sa:  Array[String]): Unit =
 
