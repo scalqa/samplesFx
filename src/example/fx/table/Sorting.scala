@@ -30,7 +30,7 @@ object Sorting extends Application(800, 401, "TryTableSort"):
       ComboBox(Table.SortMode.~ , SortableTable.sortMode).^(_.value_*.onValueChange(v => SortableTable.sortMode = v)),
       Button("Delete first two",        ITEMS.modify(_.remove_<>(0 <> 1))).^(b => ITEMS.onChange(_ => b.disable = ITEMS.size < 2)),
       Button("Append next 5",           ITEMS ++= intStream.read_~(5)),
-      Button("Replace All with next 5", ITEMS.replaceAll(intStream.read_~(5))),
+      Button("Replace All with next 5", ITEMS.replaceWith(intStream.read_~(5))),
       Button("Clear All",               ITEMS.clear),
       Button("Sort",                    ITEMS.sort),
       Button("Sort Reversed",           ITEMS.sortReversed))

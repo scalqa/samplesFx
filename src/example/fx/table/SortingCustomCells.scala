@@ -28,5 +28,5 @@ object SortingCustomCells extends Application(800, 400, "TryTableSort"):
 
   object View extends Pane.Border:
     center = Pane.Flow(Table)
-    top    = Pane.Flow(Button("Do", Table.rows.replaceAll(intStream.read_~(5))))
+    top    = Pane.Flow(Button("Do", Table.rows.replaceWith(intStream.read_~(5))))
 

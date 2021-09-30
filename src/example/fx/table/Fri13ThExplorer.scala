@@ -22,7 +22,7 @@ object Fri13ThExplorer extends Fx.Application(400, 600, "Fri the 13th Explorer."
 
     Centuries.selection.onChangeRun {                                       // On change, re-build days
       ordering = \/                                                         // order could be re-set by user
-      items.replaceAll(
+      items.replaceWith(
         Centuries.selection.~                                               // Stream of selected centuries
           .flatMap(c => (c - 1) * 100 <>> c * 100).map(_.Year)              // ~[Year]
           .flatMap(_.days).filter(_.number == 13).filter(_.weekDay.isFri)   // ~[Day]
