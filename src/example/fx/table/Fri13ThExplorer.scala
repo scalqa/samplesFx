@@ -12,7 +12,7 @@ object Fri13ThExplorer extends Fx.Application(400, 600, "Fri the 13th Explorer."
   object Centuries extends Fx.Table[Int]:                                   // Century Table Definition
     new Column[String]("Centuries", 100, _.toString + " Century")
     items ++= 1 <> 21                                                       // Centuries from 1st to 21st
-    sortMode = \/                                                           // No sorting
+    sortMode = VOID                                                         // No sorting
     selection.mode = Fx.Selection.Mode.Multiple                             // Allow multi selection
 
   object Days extends Fx.Table[Day]:                                        // Days Table Definition
@@ -21,11 +21,11 @@ object Fri13ThExplorer extends Fx.Application(400, 600, "Fri the 13th Explorer."
     new Column[String]("Day",   70, d => d.weekDay.tag + ", " + d.number)
 
     Centuries.selection.onChangeRun {                                       // On change, re-build days
-      ordering = \/                                                         // order could be re-set by user
+      ordering = VOID                                                       // order could be re-set by user
       items.replaceWith(
-        Centuries.selection.~                                               // Stream of selected centuries
-          .flatMap(c => (c - 1) * 100 <>> c * 100).map(_.Year)              // ~[Year]
-          .flatMap(_.days).filter(_.number == 13).filter(_.weekDay.isFri)   // ~[Day]
+        Centuries.selection.stream                                          // Selected centuries Stream
+          .flatMap(c => (c - 1) * 100 <>> c * 100).map(_.Year)              // Stream[Year]
+          .flatMap(_.days).filter(_.number == 13).filter(_.weekDay.isFri)   // Stream[Day]
       )
     }
 

@@ -1,5 +1,5 @@
 
-scalaVersion := "3.0.2"
+scalaVersion := "3.1.0"
 
 fork in run  := true
 
@@ -19,5 +19,5 @@ lazy val needJavaFx: String = {
 
 libraryDependencies ++= Seq("base", "controls", "graphics").filter(_ => needJavaFx != "none").map( m=> "org.openjfx" % s"javafx-$m" % "11.0.2" classifier needJavaFx)
 
-libraryDependencies += "org.scalqa" % "scalqa_3" % "0.994"
+libraryDependencies += "org.scalqa" % "scalqa_3" % "0.995"
 
